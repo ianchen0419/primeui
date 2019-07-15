@@ -32,14 +32,10 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-            'window.jQuery': 'jquery',
-            'window.$': 'jquery',
-            Popper: ['popper.js', 'default'],
+            // 'window.jQuery': 'jquery',
+            // 'window.$': 'jquery',
             PrimeUI: 'primeui'
         })
     ]
 
 }
-
-// var $ = require('jquery');
-// require('jquery-ui');
