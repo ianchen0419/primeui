@@ -14,4 +14,17 @@ module.exports = function $base() {
 	this.hi=function(){
 		console.log('hihiihihihihihihi');
 	}
+
+	$('.dialog').puidialog({
+		width: 900,
+		modal: true,
+		draggable: false,
+		resizable: false,
+		showEffect: 'fade',
+	})
+
+
+	this.showPopup=function(target){
+		$(target).puidialog('show');
+	}
 }

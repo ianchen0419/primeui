@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-	mode: 'development',
+    mode: 'development',
     entry: './inc/js/init.js',
     devtool: 'inline-source-map',
     output: {
@@ -22,6 +22,12 @@ module.exports = {
             {
                 test: /\.(gif|png|jpg|eot|wof|woff|woff2|ttf|svg)$/,
                 loader: "url-loader"
+            },{
+                test: require.resolve('jquery'),
+                use: [{
+                    loader: 'expose-loader',
+                    options: '$'
+                }]
             }
         ]
     },
@@ -29,13 +35,6 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "bundle.css"
         }),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            // 'window.jQuery': 'jquery',
-            // 'window.$': 'jquery',
-            PrimeUI: 'primeui'
-        })
     ]
 
 }
